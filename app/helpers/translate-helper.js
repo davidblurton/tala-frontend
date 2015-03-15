@@ -11,7 +11,7 @@ var lookup = {
       "ao": "Adverb",
       "to": "Numeral",
       "pfn": "Personal pronoun",
-      "afturbfn": "Reflexive pronoun",
+      "abfn": "Reflexive pronoun",
       "fn": "Other pronoun",
       "gr": "Definite article"
     },
@@ -80,7 +80,7 @@ var lookup = {
       "ao": "atviksorð",
       "to": "töluorð",
       "pfn": "persónufornafn",
-      "afturbfn": "afturbeygt fornafn",
+      "abfn": "afturbeygt fornafn",
       "fn": "önnur fornöfn",
       "gr": "greinir"
     },

@@ -13,6 +13,10 @@ export default Ember.Route.extend({
       url += `/filter?grammar_tag=${params.grammar_tag}`
     }
 
+    if(params.word_class) {
+      url += `&word_class=${params.word_class}`
+    }
+
     return ajax(url).then(data => {
       return {
         word: params.word,
