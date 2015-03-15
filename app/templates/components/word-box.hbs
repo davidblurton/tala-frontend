@@ -1,0 +1,26 @@
+<div class="Word">
+  <p>{{word.type}}
+    <span class="Word-headWord">{{word.head_word}}</span>
+    {{translate-helper 'word_class' word.word_class}}
+  </p>
+
+  <ul>
+  {{#each tag in (each-keys word.tags)}}
+    <li> {{tag}}:
+    {{#each pair in (to-array tag word.tags)}}
+
+      {{#if pair.value}}
+        <span class="Word-link Word-link--selected">{{translate-helper 'grammar_tag' pair.key}}</span>
+      {{else}}
+        <button class="Word-link" {{action 'click' tag pair.key}}>
+          {{translate-helper 'grammar_tag' pair.key}}
+        </button>
+      {{/if}}
+
+    {{/each}}
+    </li>
+  {{/each}}
+  </ul>
+</div>
+
+{{!--format-json word--}}

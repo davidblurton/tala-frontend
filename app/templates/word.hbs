@@ -1,0 +1,7 @@
+{{search-box word=word action="lookupWord"}}
+
+{{#each result in results}}
+  {{word-box word=result action='filterWord'}}
+{{else}}
+  <em>No results</em>
+{{/each}}
