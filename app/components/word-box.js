@@ -21,13 +21,22 @@ export default Ember.Component.extend({
           }
         }
 
-        if(word_class === 'so' || type === 'degree' || type === 'gender') {
-          res += '-'
+        if(word_class === 'to' && type === 'gender') {
+          res += '_'
+        } else {
+          if(word_class === 'so' || type === 'degree' || type === 'gender') {
+            res += '-'
+          }
         }
       }
 
       if(res.endsWith('-')) {
         res = res.slice(0, -1) // remove trailling -
+      }
+
+      if(word_class === 'to') {
+        // all numberals are plural
+        res += 'FT'
       }
 
       this.sendAction('action', this.get('word'), res);

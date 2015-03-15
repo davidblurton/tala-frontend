@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    var url = `http://localhost:8000/api/${params.word}`
+    var url = `http://icelandic.davidblurton.me/api/${params.word}`
 
     if(params.grammar_tag) {
       url += `/filter?grammar_tag=${params.grammar_tag}`
