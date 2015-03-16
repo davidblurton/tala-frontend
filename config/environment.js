@@ -43,6 +43,8 @@ module.exports = function(environment) {
 
   }
 
+  ENV.contentSecurityPolicyHeader = 'Disabled-Content-Security-Policy'
+
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self'",
