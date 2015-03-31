@@ -14,9 +14,9 @@ export default Ember.Component.extend({
         if(type === tag) {
           res += key
         } else {
-          for(let key in tags[type]) {
-            if(tags[type][key]) {
-              res += key
+          for(let k in tags[type]) {
+            if(tags[type][k]) {
+              res += k
             }
           }
         }
