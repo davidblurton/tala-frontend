@@ -12,9 +12,9 @@
       {{#if pair.value}}
         <span class="Word-link Word-link--selected">{{translate-helper 'grammar_tag' pair.key}}</span>
       {{else}}
-        <button class="Word-link" {{action 'click' tag pair.key}}>
+        <a href="javascript:;" class="Word-link" {{action 'click' tag pair.key}}>
           {{translate-helper 'grammar_tag' pair.key}}
-        </button>
+        </a>
       {{/if}}
 
     {{/each}}
