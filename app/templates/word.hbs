@@ -1,7 +1,12 @@
 {{search-box word=word action="lookupWord"}}
 
-{{#each result in results}}
-  {{word-box word=result action='filterWord'}}
-{{else}}
-  <em>No results</em>
-{{/each}}
+<div class="Word">
+  <ul>
+  {{#each result in (word-result model.results)}}
+    <li>
+      {{result.key}}:
+      {{result.value}}
+    </li>
+  {{/each}}
+  </ul>
+</div>

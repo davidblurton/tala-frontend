@@ -1,35 +1,22 @@
-import Ember from 'ember'
+import Ember from 'ember';
 import ajax from 'ic-ajax';
 import config from '../config/environment';
 
 export default Ember.Route.extend({
-  queryParams: {
-    grammarTag: { refreshModel: true }
-  },
-
   model(params) {
-    var url = `${config.api}/related/${params.word}`
-
-    if(params.grammarTag) {
-      url += `?grammarTag=${params.grammarTag}`
-    }
-
-    if(params.wordClass) {
-      url += `&wordClass=${params.wordClass}`
-    }
+    var split = params.word.replace(' ', '/');
+    var url = `${config.api}/verb/${split}`;
 
     return ajax(url).then(data => {
       return {
         word: params.word,
-        results: data.results
-      }
-    })
+        results: data
+      };
+    });
   },
-  setupController: function(controller, model) {
-    controller.set('model', model);
 
-    if(model.results.length > 0) {
-      controller.set('word', model.results[0].word_form)
-    }
+  setupController(controller, model) {
+    controller.set('model', model);
+    controller.set('word', model.word);
   }
-})
+});

@@ -26,7 +26,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.api = 'http://localhost:8000'
+    ENV.api = 'http://localhost:8000';
   }
 
   if (environment === 'test') {
@@ -42,19 +42,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.api = 'http://api.tala.is'
-  }
 
-  ENV.contentSecurityPolicyHeader = 'Disabled-Content-Security-Policy'
-
-  ENV.contentSecurityPolicy = {
-    'default-src': "'none'",
-    'script-src': "'self'",
-    'font-src': "'self' 'http://fonts.googleapis.com'",
-    'connect-src': "'self' http://localhost:8000",
-    'img-src': "'self'",
-    'style-src': "'self' 'unsafe-inline'",
-    'media-src': "'self'"
   }
 
   return ENV;
