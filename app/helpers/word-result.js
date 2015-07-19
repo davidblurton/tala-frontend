@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export function helper(obj) {
+export function helper(obj = {}) {
   return Object.keys(obj).map(key => {
     return {
       key: key,

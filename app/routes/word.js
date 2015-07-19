@@ -4,7 +4,7 @@ import config from '../config/environment';
 
 export default Ember.Route.extend({
   model(params) {
-    var split = params.word.replace(' ', '/');
+    var split = params.word.toLowerCase().replace(' ', '/');
     var url = `${config.api}/verb/${split}`;
 
     return ajax(url).then(data => {
