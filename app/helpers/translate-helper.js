@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 var lookup = {
   "en" : {
-    "word_class": {
+    "wordClass": {
       "hk": "Noun (neuter)",
       "kk": "Noun (masculine)",
       "kvk": "Noun (feminine)",
@@ -16,7 +16,7 @@ var lookup = {
       "gr": "Definite article"
     },
 
-    "grammar_tag": {
+    "grammarTag": {
       "1p": "1st person",
       "1P": "1st person",
       "2p": "2nd person",
@@ -71,7 +71,7 @@ var lookup = {
   },
 
   "is" : {
-    "word_class": {
+    "wordClass": {
       "hk": "hvorugkyn",
       "kk": "karlkyn",
       "kvk": "kvenkyn",
@@ -85,7 +85,7 @@ var lookup = {
       "gr": "greinir"
     },
 
-    "grammar_tag": {
+    "grammarTag": {
       "1p": "1. persóna (í fornöfnum)",
       "1P": "1. persóna (í sagnorðum)",
       "2p": "2. persóna (í fornöfnum)",
@@ -141,7 +141,7 @@ var lookup = {
 }
 
 export function json(dict, input) {
-  var translation = lookup.en[dict][input];
+  var translation = lookup.en[dict] && lookup.en[dict][input];
 
   if(!translation) {
     console.warn('missing translation', dict, input)

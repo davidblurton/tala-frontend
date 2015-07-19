@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     click: function(tag, key) {
       // TODO: Move this logic to the server
       var tags = this.get('word.tags')
-      var word_class = this.get('word.word_class')
+      var wordClass = this.get('word.wordClass')
       var res = '';
 
       for(var type in tags) {
@@ -21,10 +21,10 @@ export default Ember.Component.extend({
           }
         }
 
-        if(word_class === 'to' && type === 'gender') {
+        if(wordClass === 'to' && type === 'gender') {
           res += '_'
         } else {
-          if(word_class === 'so' || type === 'degree' || type === 'gender') {
+          if(wordClass === 'so' || type === 'degree' || type === 'gender') {
             res += '-'
           }
         }
@@ -34,7 +34,7 @@ export default Ember.Component.extend({
         res = res.slice(0, -1) // remove trailling -
       }
 
-      if(word_class === 'to') {
+      if(wordClass === 'to') {
         // all numberals are plural
         res += 'FT'
       }

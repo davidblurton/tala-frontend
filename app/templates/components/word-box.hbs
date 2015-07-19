@@ -1,7 +1,7 @@
 <div class="Word">
   <p>{{word.type}}
-    <span class="Word-headWord">{{word.head_word}}</span>
-    {{translate-helper 'word_class' word.word_class}}
+    <span class="Word-headWord">{{word.wordForm}}</span>
+    {{translate-helper 'wordClass' word.wordClass}}
   </p>
 
   <ul>
@@ -10,10 +10,10 @@
     {{#each pair in (to-array tag word.tags)}}
 
       {{#if pair.value}}
-        <span class="Word-link Word-link--selected">{{translate-helper 'grammar_tag' pair.key}}</span>
+        <span class="Word-link Word-link--selected">{{translate-helper 'grammarTag' pair.key}}</span>
       {{else}}
         <a href="javascript:;" class="Word-link" {{action 'click' tag pair.key}}>
-          {{translate-helper 'grammar_tag' pair.key}}
+          {{translate-helper 'grammarTag' pair.key}}
         </a>
       {{/if}}
 

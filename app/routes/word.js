@@ -1,20 +1,21 @@
 import Ember from 'ember'
 import ajax from 'ic-ajax';
+import config from '../config/environment';
 
 export default Ember.Route.extend({
   queryParams: {
-    grammar_tag: { refreshModel: true }
+    grammarTag: { refreshModel: true }
   },
 
   model(params) {
-    var url = `http://icelandic.davidblurton.me/api/${params.word}`
+    var url = `${config.api}/related/${params.word}`
 
-    if(params.grammar_tag) {
-      url += `/filter?grammar_tag=${params.grammar_tag}`
+    if(params.grammarTag) {
+      url += `?grammarTag=${params.grammarTag}`
     }
 
-    if(params.word_class) {
-      url += `&word_class=${params.word_class}`
+    if(params.wordClass) {
+      url += `&wordClass=${params.wordClass}`
     }
 
     return ajax(url).then(data => {

@@ -1,9 +1,9 @@
 import Ember from "ember"
 
 export default Ember.ObjectController.extend({
-  queryParams: ['grammar_tag', 'word_class'],
-  grammar_tag: '',
-  word_class: '',
+  queryParams: ['grammarTag', 'wordClass'],
+  grammarTag: '',
+  wordClass: '',
   word: '',
 
   actions: {
@@ -11,9 +11,9 @@ export default Ember.ObjectController.extend({
       this.transitionToRoute('word', word)
     },
 
-    filterWord: function(word, grammar_tag) {
-      this.set('word_class', word.word_class)
-      this.set('grammar_tag', grammar_tag)
+    filterWord: function(word, grammarTag) {
+      this.set('wordClass', word.wordClass)
+      this.set('grammarTag', grammarTag)
     }
   }
 })
