@@ -16,7 +16,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      api: 'http://api.tala.is'
     }
   };
 
@@ -42,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.api = 'http://api.tala.is';
   }
 
   return ENV;
