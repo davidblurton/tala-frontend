@@ -2,7 +2,7 @@
 
 <div class="Word">
 
-  {{#each result in (word-result model.results)}}
+  {{#each (word-result model.results) as |result|}}
     <div class="WordResult">
       <div class="WordResult-title">{{result.key}}</div>
       <div class="WordResult-item">{{result.value}}</div>
