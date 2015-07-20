@@ -1,12 +1,12 @@
 {{search-box word=word action="lookupWord"}}
 
 <div class="Word">
-  <ul>
+
   {{#each result in (word-result model.results)}}
-    <li>
-      {{result.key}}:
-      {{result.value}}
-    </li>
+    <div class="WordResult">
+      <div class="WordResult-title">{{result.key}}</div>
+      <div class="WordResult-item">{{result.value}}</div>
+    </div>
   {{/each}}
-  </ul>
+
 </div>
