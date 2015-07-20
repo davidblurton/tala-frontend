@@ -3,10 +3,11 @@
 @import "word";
 
 html, body {
+  -webkit-font-smoothing: antialiased;
+  background-color: @body;
+  color: @primary-text;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  color: @primary-text;
-  background-color: @body;
 }
 
 * {
@@ -21,17 +22,18 @@ header {
 }
 
 input {
-  color: @secondary-text;
-  font-size: 36px;
-  outline: none;
+  -webkit-appearance: none;
+  background-color: transparent;
   border: none;
   border-bottom: 1px solid @border;
-  padding-bottom: 5px;
-  width: 100%;
-  background-color: transparent;
-  -webkit-appearance: none;
   border-radius: 0;
+  color: @secondary-text;
+  font-family: inherit;
+  font-size: 32px;
+  outline: none;
+  padding-bottom: 5px;
   transition: color 200ms, border-color 200ms;
+  width: 100%;
 }
 
 ::-webkit-input-placeholder {
