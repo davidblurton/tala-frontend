@@ -1,29 +1,60 @@
 @import "colors";
+@import "logo";
 @import "word";
 
 html, body {
   font-family: 'Source Sans Pro', sans-serif;
-  margin: 20px 10px;
-  color: @black;
+  color: @primary-text;
+  background-color: @body;
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 input {
+  color: @secondary-text;
   font-size: 36px;
   outline: none;
   border: none;
-  border-bottom: 2px solid #A9A9A9;
+  border-bottom: 1px solid @border;
+  padding-bottom: 5px;
   width: 100%;
+  background-color: transparent;
+  transition: color 200ms, border-color 200ms;
+}
+
+::-webkit-input-placeholder {
+  color: @hint-text;
+}
+
+::selection {
+  background: @primary;
+  color: white;
+}
+
+input:focus {
+  color: @primary-text;
+  border-width: 2px;
+  margin-bottom: -1px;
+  border-color: @primary;
+  transition: color 200ms, border-color 200ms;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 button {
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-[data-ember-action] {
-  cursor: pointer;
 }
