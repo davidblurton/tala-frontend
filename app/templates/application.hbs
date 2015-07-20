@@ -1,7 +1,13 @@
 <header>
-  <div class="Logo"><em>tala.is</em>lensku</div>
+  {{#link-to 'word' ''}}
+    <div class="Logo"><em>tala.is</em>lensku</div>
+  {{/link-to}}
 </header>
 
 <div class="container">
   {{outlet}}
 </div>
+
+<footer>
+Data from <a href="http://bin.arnastofnun.is/" target="_blank">Beygingarlýsing íslensks nútímamáls</a>
+</footer>
