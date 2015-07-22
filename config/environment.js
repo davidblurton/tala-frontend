@@ -41,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.api = 'http://api.tala.is';
+    ENV.api = '//api.tala.is';
   }
 
   return ENV;
