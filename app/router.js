@@ -7,9 +7,12 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('verb', function() {
-    this.route('word', {path: ':word'});
+    this.route('word', { path: ':word' });
   });
-  this.route('preposition', { path: '/preposition/:word' });
+
+  this.resource('preposition', function() {
+    this.route('word', { path: ':word' });
+  });
 });
 
 export default Router;

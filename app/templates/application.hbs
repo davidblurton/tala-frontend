@@ -1,10 +1,13 @@
 <header>
-  {{#link-to 'index'}}
-    <div class="Logo"><em>tala.is</em>lensku</div>
-  {{/link-to}}
+  <div class="Logo">
+    {{#link-to 'index'}}
+      <em>tala.is</em>lensku
+   {{/link-to}}
+  </div>
 </header>
 
 <div class="container">
+  {{main-nav}}
   {{outlet}}
 </div>
 
