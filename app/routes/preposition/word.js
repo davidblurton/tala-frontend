@@ -4,7 +4,7 @@ import config from '../../config/environment';
 
 export default Ember.Route.extend({
   model(params) {
-    var url = `${config.api}/preposition/${params.word}`;
+    var url = `${config.api}/preposition/${params.word}?lang=en`;
     return ajax(url);
   }
 });
