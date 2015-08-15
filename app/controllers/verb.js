@@ -4,9 +4,11 @@ export default Ember.Controller.extend({
   needs: ['verb/word'],
 
   word: function() {
-    var controller = this.get('controllers.verb/word');
-    return controller.get('model.query');
-  }.property('controllers.verb/word'),
+    let params = this.get('container').lookup('router:main').router.currentHandlerInfos
+        .findBy('name','verb.word')
+
+    return params ? params.params.word : ''
+  }.property('model'),
 
   actions: {
     lookupWord: function(word) {
