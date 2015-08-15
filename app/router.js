@@ -13,6 +13,10 @@ Router.map(function() {
   this.resource('preposition', function() {
     this.route('word', { path: ':word' });
   });
+
+  this.resource('adjective', function() {
+    this.route('word', { path: ':word' });
+  });
 });
 
 export default Router;
