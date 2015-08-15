@@ -1,10 +1,8 @@
 <div class="Word">
-  {{#each results as |result|}}
-    {{#each (word-result result) as |word|}}
-      <div class="WordResult">
-        <div class="WordResult-title">{{word.key}}</div>
-        <div class="WordResult-item">{{word.value}}</div>
-      </div>
-    {{/each}}
+  {{#each (word-result results) as |word|}}
+    <div class="WordResult">
+      <div class="WordResult-title">{{word.key}}</div>
+      <div class="WordResult-item">{{word.value}}</div>
+    </div>
   {{/each}}
 </div>
