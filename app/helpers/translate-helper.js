@@ -138,13 +138,13 @@ var lookup = {
       "": "sterk beyging"
     }
   }
-}
+};
 
 export function json(dict, input) {
   var translation = lookup.en[dict] && lookup.en[dict][input];
 
   if(!translation) {
-    console.warn('missing translation', dict, input)
+    console.warn('missing translation', dict, input);
   }
 
   return translation;

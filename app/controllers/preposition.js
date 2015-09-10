@@ -5,9 +5,9 @@ export default Ember.Controller.extend({
 
   word: function() {
     let params = this.get('container').lookup('router:main').router.currentHandlerInfos
-        .findBy('name','verb.word')
+        .findBy('name','verb.word');
 
-    return params ? params.params.word : ''
+    return params ? params.params.word : '';
   }.property('model'),
 
   actions: {
