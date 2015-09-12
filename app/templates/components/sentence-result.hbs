@@ -1,0 +1,12 @@
+<div class="Sentence">
+  <div class="Sentence-suggestion">{{result.suggestions}}</div>
+
+  {{#each result.corrections as |correction|}}
+    <div class="Sentence-correction">
+      <div class="Sentence-rule">{{correction.rule}}</div>
+      <div class="Sentence-explanation">{{correction.explanation}}</div>
+    </div>
+  {{else}}
+    <div class="Sentence-none">No errors found, but tala can't detect all types of error.</div>
+  {{/each}}
+</div>

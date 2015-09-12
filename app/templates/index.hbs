@@ -1,1 +1,9 @@
+{{search-box word=word action="lookupWord"}}
 
+{{#unless model}}
+<div class="Help">
+  <p>Tala tries to explain and fix Icelandic grammar: {{#link-to 'index' (query-params q='þú tala íslenska')}}þú tala íslenska{{/link-to}}</p>
+</div>
+{{/unless}}
+
+{{sentence-result result=model}}
